@@ -5,6 +5,16 @@ from unittest.mock import patch
 
 class TestSomeClass(TestCase):
 
+    # @patch('some_package.some_module.someHelperClass')
+    # def test_some_class_behaviour(self,shc):
+    #     # shc is the mocked instance of someHelperClass
+    #     shc.return_value.some_method.return_value = True
+            
+
+    #     # testing behaviour
+    #     sc = someClass()
+    #     self.assertEqual(sc.call(),"Returned True")
+
     def test_some_class_behaviour(self):
         with patch("some_package.some_module.someHelperClass") as mocked_obj:
 
@@ -19,6 +29,3 @@ class TestSomeClass(TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-
-
