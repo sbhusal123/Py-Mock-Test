@@ -16,6 +16,10 @@ class TestSomeClass(TestCase):
     #     self.assertEqual(sc.call(),"Returned True")
 
     def test_some_class_behaviour(self):
+        # NOTE: always mock the path where the import is made
+        # not where the module definition is placed.
+        # if some_package.some_module.someHelperClass is imported at
+        # mypackege.mymodile.someHelperClass patch the same
         with patch("some_package.some_module.someHelperClass") as mocked_obj:
 
             # alias.return_value.method_name.return_value = {mocked_value}
